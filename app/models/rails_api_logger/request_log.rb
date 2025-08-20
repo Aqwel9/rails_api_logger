@@ -31,7 +31,7 @@ module RailsApiLogger
           body
         end
       end
-      create(path: request.path, request_body: body, method: request.method, started_at: Time.current, loggable: loggable)
+      create(path: request.path, request_body: body, method: request.method, started_at: Time.current, loggable: loggable, ip_used: request.remote_ip)
     end
 
     def from_response(response, skip_response_body: false)
